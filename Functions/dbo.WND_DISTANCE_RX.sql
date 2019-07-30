@@ -22,7 +22,7 @@ BEGIN
     DECLARE @SourceFullName NVARCHAR(200) = ISNULL(@SourceFirstName, '') + N' ' + ISNULL(@SourceLastName, '');
     DECLARE @TargetFullName NVARCHAR(200) = ISNULL(@TargetFirstName, '') + N' ' + ISNULL(@TargetLastName, '');
 
-    RETURN dbo.WND_DISTANCE(@SourceFullName, @TargetFullName)
+    RETURN dbo.WND_CLR_DISTANCE(@SourceFullName, @TargetFullName)
            / CAST(dbo.WND_GREATEST(LEN(@SourceFullName), LEN(@TargetFullName)) AS DECIMAL);
 
 END;
